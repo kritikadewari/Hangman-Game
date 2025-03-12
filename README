@@ -1,0 +1,45 @@
+IMPORTING:-
+random — lets you randomly select a word from the word_list.
+os — used to clear the console screen (cls on Windows, clear on Unix/Linux/Mac).
+
+VISUALS:-
+A list of strings (hangman_figure), each representing the state of the hangman as the player loses lives.
+There are 6 stages in the figure (index 0 shows the full hangman, index 6 is empty).
+
+MAIN FUNCTION:-
+Defines the hangman() function, which contains the main game loop and logic.
+
+WORD SELECTION SETUP:-
+word_list: A predefined list of possible words.
+word: Picks a random word from word_list and converts it to lowercase.
+lives: You start with 5 lives.
+display: A string of underscores _ equal in length to the chosen word. This shows which letters have been guessed correctly.
+already_guessed: A list to track letters the player already guessed to prevent repeats.
+
+b. Display Info to Player
+Shows the current state of the guessed word (display), remaining lives, and letters already guessed.MAIN GFAME LOOP:-
+The game runs inside an infinite loop(WHILE LOOP), which will break when the player wins or loses.
+
+c. Get User Input
+.lower() ensures it works regardless of letter case.
+
+d. Input Validation
+Stops the player from guessing the same letter multiple times.
+
+e. Check for Repeated Guesses
+Stops the player from guessing the same letter multiple times.
+
+f. Process the Guess
+Adds the guess to already_guessed.
+
+CORRECT GUESS:-
+If the letter is in the word:
+It finds all indices where the letter appears.
+Updates the display to show the correctly guessed letters.
+If there are no more underscores, it means the player won!
+
+INCORRECT GUESS:-
+If the guess isn't in the word:
+Deduct 1 life.
+Show the updated hangman figure based on remaining lives.
+If no lives are left, the player loses. The correct word is revealed.
